@@ -1,2 +1,2 @@
 const content = document.querySelector("#content");
-content.textContent = "Hello World!"
+content.textContent = "Hello World";
