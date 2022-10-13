@@ -38,8 +38,10 @@ const PageConstructor = (function () {
         const navLinks = createElement("ul", "nav-links");
         ["Home", "Cakes", "Sweets", "Chocolates"].forEach((nav) => {
             const li = document.createElement("li");
+            const p = document.createElement("p");
             li.setAttribute("data-nav", nav);
-            li.textContent = nav;
+            p.textContent = nav;
+            li.appendChild(p);
             li.addEventListener("click", navigate);
             navLinks.appendChild(li);
         })
