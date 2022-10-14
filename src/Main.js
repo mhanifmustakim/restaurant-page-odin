@@ -1,16 +1,12 @@
 import { createElement } from './DomHelper.js';
 import HomePage from "./pages/Home.js";
-import SweetsPage from "./pages/Sweets.js";
-import CakesPage from "./pages/Cakes.js";
-import ChocolatesPage from "./pages/Chocolates.js";
+import Menu from "./pages/Menu.js";
 
 const Main = (function () {
     let mainContent;
     const pages = {
         Home: HomePage(),
-        Sweets: SweetsPage(),
-        Cakes: CakesPage(),
-        Chocolates: ChocolatesPage()
+        Menu: Menu()
     }
 
     const init = () => {

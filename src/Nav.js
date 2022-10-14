@@ -2,8 +2,8 @@ import { createElement } from "./DomHelper";
 import Main from "./Main.js";
 
 const Nav = (function () {
-    const navs = ["Home", "Cakes", "Sweets", "Chocolates"];
-    let navNode, currentActive;;
+    const navs = ["Home", "Menu"];
+    let navNode, currentActive;
 
     const init = () => {
         const el = createElement("div", "page-navbar");
@@ -20,7 +20,7 @@ const Nav = (function () {
 
         el.appendChild(navLinks);
         navNode = el;
-        setActiveNav("Home");
+        setActiveNav(navs[0]);
     }
 
     const navigate = (event) => {
