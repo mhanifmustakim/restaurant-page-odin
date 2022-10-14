@@ -25,6 +25,14 @@
     text-decoration: inherit;
 }
 
+.text-cursive {
+    font-family: "Pacifico", sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
 #content {
     width: 100vw;
     min-height: 100vh;
@@ -92,6 +100,35 @@
 
 #page-main {
     grid-area: main;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    width: min(100vw, 1000px);
+}
+
+#home {
+    min-height: 100%;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--title-color);
+    display: grid;
+    grid-template: repeat(2, auto) / 1fr;
+    gap: clamp(1rem, 3vh, 2rem);
+    place-content: center;
+}
+
+#home>img {
+    --size: calc(100vw - 2rem);
+    --max-size: calc(500px - 2rem);
+    width: var(--size);
+    height: var(--size);
+    max-width: var(--max-size);
+    max-height: var(--max-size);
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#home>h1 {
+    font-size: 2em;
 }
 
 #page-footer {
