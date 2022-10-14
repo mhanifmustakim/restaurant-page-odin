@@ -1,13 +1,12 @@
 import HomePageImage from "/src/Images/gabrielle-henderson-FqB_Kj7PZa8-unsplash.jpg";
+import { addClasses, createElement } from '../DomHelper.js';
 
 export default function () {
-    const home = document.createElement("div");
-    home.id = "home";
+    const home = createElement("div", "home");
 
     const mainText = document.createElement("h1");
     mainText.innerHTML = "Welcome to Sugar Rush Cafe";
-    mainText.classList.add("text-cursive");
-    mainText.classList.add("text-center");
+    addClasses(mainText, "text-center text-cursive");
 
     const p = document.createElement("p");
     p.classList.add("text-center");

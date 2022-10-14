@@ -1,4 +1,4 @@
-import { createElement } from "./PageConstructor.js";
+import { createElement } from "./DomHelper";
 import Main from "./Main.js";
 
 const Nav = (function () {

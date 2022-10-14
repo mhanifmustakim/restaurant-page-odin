@@ -1,4 +1,4 @@
-import { createElement } from "./PageConstructor.js";
+import { createElement } from './DomHelper.js';
 import HomePage from "./pages/Home.js";
 import SweetsPage from "./pages/Sweets.js";
 import CakesPage from "./pages/Cakes.js";

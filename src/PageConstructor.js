@@ -1,19 +1,6 @@
+import { createElement, createLink } from './DomHelper.js';
 import Nav from './Nav.js';
 import Main from './Main.js';
-
-const createElement = (tag, id) => {
-    const el = document.createElement(tag);
-    el.setAttribute("id", id);
-    return el
-}
-
-const createLink = (text, src) => {
-    const el = document.createElement("a");
-    el.setAttribute("target", "_blank");
-    el.setAttribute("href", src);
-    el.textContent = text;
-    return el
-}
 
 const createHeader = () => {
     const el = createElement("div", "page-header");
@@ -52,4 +39,4 @@ const initPage = () => {
     content.appendChild(createFooter());
 }
 
-export { initPage, createElement }
+export { initPage }
