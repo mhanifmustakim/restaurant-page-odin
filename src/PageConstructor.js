@@ -1,6 +1,6 @@
-import Nav from './Nav.js'
+import Nav from './Nav.js';
+import Main from './Main.js';
 
-let mainContent;
 const createElement = (tag, id) => {
     const el = document.createElement(tag);
     el.setAttribute("id", id);
@@ -40,8 +40,8 @@ const createNavbar = () => {
 }
 
 const createMain = () => {
-    mainContent = createElement("div", "page-main")
-    return mainContent
+    Main.init();
+    return Main.node
 }
 
 const initPage = () => {
