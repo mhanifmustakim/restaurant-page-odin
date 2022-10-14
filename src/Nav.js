@@ -1,4 +1,5 @@
 import { createElement } from "./PageConstructor.js";
+import Main from "./Main.js";
 
 const Nav = (function () {
     const navs = ["Home", "Cakes", "Sweets", "Chocolates"];
@@ -23,7 +24,9 @@ const Nav = (function () {
     }
 
     const navigate = (event) => {
-        console.log(event.target.getAttribute("data-nav"));
+        const target = event.target.getAttribute("data-nav") || event.target.parentElement.getAttribute("data-nav");
+        setActiveNav(target);
+        Main.setContent(target);
     }
 
     const setActiveNav = (nav) => {
