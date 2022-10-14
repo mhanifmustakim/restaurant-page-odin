@@ -1,85 +1,55 @@
-const PageConstructor = (function () {
-    let mainContent;
-    const createElement = (tag, id) => {
-        const el = document.createElement(tag);
-        el.setAttribute("id", id);
-        return el
-    }
+import Nav from './Nav.js'
 
-    const createLink = (text, src) => {
-        const el = document.createElement("a");
-        el.setAttribute("target", "_blank");
-        el.setAttribute("href", src);
-        el.textContent = text;
-        return el
-    }
+let mainContent;
+const createElement = (tag, id) => {
+    const el = document.createElement(tag);
+    el.setAttribute("id", id);
+    return el
+}
 
-    const createHeader = () => {
-        const el = createElement("div", "page-header");
-        const header = document.createElement("header");
-        header.textContent = "Sugar Rush Cafe"
-        el.appendChild(header);
-        return el
-    }
+const createLink = (text, src) => {
+    const el = document.createElement("a");
+    el.setAttribute("target", "_blank");
+    el.setAttribute("href", src);
+    el.textContent = text;
+    return el
+}
 
-    const createFooter = () => {
-        const el = createElement("div", "page-footer");
-        const footer = document.createElement("footer");
-        const text = document.createTextNode("Not a real restaurant -by ");
+const createHeader = () => {
+    const el = createElement("div", "page-header");
+    const header = document.createElement("header");
+    header.textContent = "Sugar Rush Cafe"
+    el.appendChild(header);
+    return el
+}
 
-        footer.appendChild(text);
-        footer.appendChild(createLink("@mhanifmustakim", "https://github.com/mhanifmustakim"))
-        el.appendChild(footer);
-        return el
-    }
+const createFooter = () => {
+    const el = createElement("div", "page-footer");
+    const footer = document.createElement("footer");
+    const text = document.createTextNode("Not a real restaurant -by ");
 
-    const createNavbar = () => {
-        const el = createElement("div", "page-navbar");
-        const navLinks = createElement("ul", "nav-links");
-        ["Home", "Cakes", "Sweets", "Chocolates"].forEach((nav) => {
-            const li = document.createElement("li");
-            const p = document.createElement("p");
-            li.setAttribute("data-nav", nav);
-            p.textContent = nav;
-            li.appendChild(p);
-            li.addEventListener("click", navigate);
-            navLinks.appendChild(li);
-        })
+    footer.appendChild(text);
+    footer.appendChild(createLink("@mhanifmustakim", "https://github.com/mhanifmustakim"))
+    el.appendChild(footer);
+    return el
+}
 
-        el.appendChild(navLinks);
-        return el
-    }
+const createNavbar = () => {
+    Nav.init();
+    return Nav.node
+}
 
-    const navigate = (event) => {
-        console.log(event.target.getAttribute("data-nav"));
-    }
+const createMain = () => {
+    mainContent = createElement("div", "page-main")
+    return mainContent
+}
 
-    const setActiveNav = (nav) => {
-        const activeNav = document.querySelector(`[data-nav="${nav}"]`);
-        activeNav.classList.add("active");
-    }
+const initPage = () => {
+    const content = document.querySelector("#content");
+    content.appendChild(createHeader());
+    content.appendChild(createNavbar());
+    content.appendChild(createMain());
+    content.appendChild(createFooter());
+}
 
-    const initMain = () => {
-        mainContent = createElement("div", "page-main")
-        return mainContent
-    }
-
-    return {
-        initMain,
-        setActiveNav,
-        get header() {
-            return createHeader()
-        },
-        get navbar() {
-            return createNavbar()
-        },
-        get footer() {
-            return createFooter()
-        },
-        get main() {
-            return mainContent
-        }
-    }
-})()
-
-export default PageConstructor
+export { initPage, createElement }
