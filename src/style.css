@@ -143,6 +143,19 @@
     font-size: 2em;
 }
 
+#menuContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.menu-section {
+    background-color: var(--active-nav-color);
+    border-radius: 1.5em;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+}
+
 .menu-section>header {
     font-size: 1.5em;
     width: 100%;

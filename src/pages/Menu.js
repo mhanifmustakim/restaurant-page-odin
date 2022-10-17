@@ -7,7 +7,7 @@ export default function () {
     header.classList.add("text-cursive");
     header.textContent = "Our Menu";
 
-    const menuContainer = document.createElement("div");
+    const menuContainer = createElement("div", "menuContainer");
     for (let i = 0; i < menuData.length; i++) {
         const thisMenu = menuData[i];
         const div = document.createElement("section");
