@@ -14,6 +14,7 @@ export default function () {
         div.classList.add("menu-section");
 
         const header = document.createElement("header");
+        header.classList.add("text-cursive");
         header.textContent = thisMenu.type;
         div.appendChild(header);
 
