@@ -194,3 +194,18 @@
 #page-footer a {
     font-weight: bold;
 }
+
+@media screen and (max-width: 425px) {
+    .menu-section {
+        padding: 0 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .menuItemContainer {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+
+    .menu-item>img {
+        height: 270px;
+    }
+}
